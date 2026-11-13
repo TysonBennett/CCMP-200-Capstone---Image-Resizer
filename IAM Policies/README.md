@@ -6,6 +6,8 @@ Permissions used by the pipeline, following least privilege.
 | File | Attached to | Purpose |
 |---|---|---|
 | `lambda-s3-access-policy.json` | Lambda execution role of `image-resizer` | Read originals, write thumbnails |
+| `api-gateway-trust-policy.json` | Role apigw-start-stepfunctions (trust relationship) | Lets API Gateway assume the role |
+| `api-gateway-start-execution-policy.json` | Role apigw-start-stepfunctions (inline policy) | Allows starting the state machine |
 
 More policies are added here as components are built (Step Functions and API Gateway roles).
 
