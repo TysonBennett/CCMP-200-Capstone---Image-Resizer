@@ -65,7 +65,7 @@ The state machine (see [`state-machine/`](state-machine/)) has four states:
 | [`state-machine/`](state-machine/) | Step Functions definition (Amazon States Language) |
 | [`api-gateway/`](api-gateway/) | API mapping template and endpoint documentation |
 | [`eventbridge-trigger/`](eventbridge-trigger/) | Upload trigger rule definition |
-| [`IAM Policies/`](IAM Policies/) | IAM policies and a summary of every role |
+| [`IAM-Policies/`](IAM-Policies/) | IAM policies and a summary of every role |
 | [`screenshots/`](screenshots/) | Screenshots |
 
 Each folder has its own README with detailed steps.
@@ -88,11 +88,11 @@ linked README for detailed steps.
    choose others and update them everywhere they appear.
 2. **Pillow layer:** run [`pillow-layer/build-layer.sh`](pillow-layer/) in CloudShell.
 3. **Lambda function:** create `image-resizer` and attach the layer. See
-   [`lambda/`](lambda/) and [`IAM Policies/`](IAM Policies/) for the S3 permissions.
+   [`lambda/`](lambda/) and [`IAM-Policies/`](IAM-Policies/) for the S3 permissions.
 4. **State machine:** create `image-resize-workflow` from
    [`statemachine/image-resize.asl.json`](statemachine/), with logging on.
 5. **API Gateway:** create the IAM role, then the REST API. See
-   [`api-gateway/`](api-gateway/) and [`IAM Policies/`](IAM Policies/).
+   [`api-gateway/`](api-gateway/) and [`IAM-Policies/`](IAM-Policies/).
 6. **Upload trigger:** enable EventBridge notifications on the original bucket
    and create the rule. See [`eventbridge-trigger/`](eventbridge-trigger/).
 
@@ -150,7 +150,7 @@ check the result in Step Functions.
 - **Explicit status:** the Lambda returns `"status": "resized"` or `"failed"`,
   which lets the state machine's Choice state decide the outcome.
 - **Least privilege:** each role only has the permissions it needs (see
-  [`IAM Policies/`](IAM Policies/)).
+  [`IAM-Policies/`](IAM-Policies/).
 - **JSONata:** the state machine uses JSONata for input and output mapping
   instead of JSONPath.
 
@@ -169,7 +169,7 @@ To avoid leaving resources running after grading, delete:
 2. The Step Functions state machine
 3. The Lambda function and the `pillow-layer` layer
 4. Both S3 buckets (empty them first)
-5. The IAM roles listed in [`IAM Policies/`](IAM Policies/)
+5. The IAM roles listed in [`IAM-Policies/`](IAM-Policies/)
 6. The CloudWatch log groups
 
 ## Author
