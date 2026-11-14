@@ -1,0 +1,19 @@
+{
+  "Name": "image-upload-rule",
+  "EventPattern": {
+    "source": ["aws.s3"],
+    "detail-type": ["Object Created"],
+    "detail": {
+      "bucket": {
+        "name": ["original-images-tyson"]
+      }
+    }
+  },
+  "InputTransformer": {
+    "InputPathsMap": {
+      "bucket": "$.detail.bucket.name",
+      "key": "$.detail.object.key"
+    },
+    "InputTemplate": "{\"bucket\": \"<bucket>\", \"key\": \"<key>\"}"
+  }
+}
