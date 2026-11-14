@@ -149,8 +149,7 @@ check the result in Step Functions.
   thumbnail can never retrigger the pipeline.
 - **Explicit status:** the Lambda returns `"status": "resized"` or `"failed"`,
   which lets the state machine's Choice state decide the outcome.
-- **Least privilege:** each role only has the permissions it needs (see
-  [`IAM-Policies/`](IAM-Policies/).
+- **Least privilege:** each role only has the permissions it needs (see [`IAM-Policies/`](IAM-Policies/)).
 - **JSONata:** the state machine uses JSONata for input and output mapping
   instead of JSONPath.
 
@@ -163,7 +162,7 @@ check the result in Step Functions.
 
 ## Cleanup
 
-To avoid leaving resources running after grading, delete:
+To avoid leaving resources running after using, delete:
 
 1. The EventBridge rule and the API Gateway API
 2. The Step Functions state machine
@@ -174,4 +173,6 @@ To avoid leaving resources running after grading, delete:
 
 ## Author
 
-Tyson Bennett, Saskatchewan Polytechnic
+Tyson Bennett
+Business Information Systems student
+Saskatchewan Polytechnic
