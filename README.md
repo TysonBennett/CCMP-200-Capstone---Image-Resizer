@@ -139,9 +139,9 @@ check the result in Step Functions.
 | Logging | Open the `/aws/lambda/image-resizer` log group | `Resized ...` or `Failed to resize ...` entries |
 
 <!-- Add screenshots below -->
-![Successful execution](docs/screenshots/execution-success.png)
-![Original and thumbnail](docs/screenshots/original-vs-thumbnail.png)
-![Failure path](docs/screenshots/execution-failed.png)
+![Successful execution](screenshots/execution-success.png)
+![Original and thumbnail](screenshots/original-vs-thumbnail.png)
+![Failure path](screenshots/execution-failed.png)
 
 ## Design notes
 
